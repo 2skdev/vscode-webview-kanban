@@ -1,0 +1,55 @@
+{
+    "name": "todo-md-kanban",
+    "publisher": "tosaki",
+    "displayName": "ToDo.md Kanban",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.54.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:todo-md-kanban.openKanban"
+    ],
+    "main": "./src/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "todo-md-kanban.openKanban",
+                "title": "Open Kanban",
+                "category": "ToDo.md"
+            }
+        ],
+        "configuration": {
+            "title": "ToDo.md Kanban",
+            "properties": {
+                "todo-md-kanban.path": {
+                    "type": "string",
+                    "description": "ToDo.md File Path",
+                    "default": ""
+                }
+            }
+        }
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "pretest": "yarn run lint",
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.4",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "14.x",
+        "@types/vscode": "^1.54.0",
+        "@vscode/test-electron": "^1.6.2",
+        "eslint": "^8.1.0",
+        "glob": "^7.1.7",
+        "mocha": "^9.1.3",
+        "typescript": "^4.4.4"
+    },
+    "dependencies": {
+        "vsce": "^2.6.3"
+    }
+}
